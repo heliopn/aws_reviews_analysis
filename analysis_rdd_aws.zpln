@@ -1895,7 +1895,7 @@
       }
     },
     {
-      "text": "%pyspark\ndf_NB = new_df\\\n    .withColumn('rating',F.when(new_df.rating_norm < 0,-1).otherwise(new_df.rating_norm))\\\n    .drop(new_df.rating_norm)\\\n    .select('rating','review_body')\ndf_NB = df_NB.withColumn(\"rating\", df_NB[\"rating\"].cast(IntegerType()))\ndf_NB.show()",
+      "text": "%pyspark\ndf_NB = new_df\\\n    .withColumn('rating',F.when(new_df.rating_norm < 0,-1).otherwise(new_df.rating_norm))\\\n    .drop(new_df.rating_norm)\\\n    .select('rating','review_body')\ndf_NB = df_NB.withColumn(\"rating\", df_NB[\"rating\"].cast(StringType()))\ndf_NB.show()",
       "user": "anonymous",
       "dateUpdated": "2021-12-14T01:32:44+0000",
       "progress": 0,
